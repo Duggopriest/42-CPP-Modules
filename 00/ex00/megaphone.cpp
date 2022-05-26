@@ -12,8 +12,6 @@ int	main(int argc, char **argv)
 		for (int i = 1; argv[i]; i++)
 		{
 			int	j = 0;
-			while (argv[i][j + 1] == ' ')
-				j++;
 			while (argv[i][j])
 			{
 				if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
