@@ -2,5 +2,5 @@ NAME  = Sed_is_for_losers
 
 all:
 	clear
-	c++ *.cpp -Wall -Wextra -Werror -o $(NAME)
-	./$(NAME) text str1 str2
+	@c++ *.cpp -Wall -Wextra -Werror -o $(NAME)
+	@./$(NAME) text s1 s2
