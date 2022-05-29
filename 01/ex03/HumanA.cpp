@@ -1,20 +1,25 @@
-#include "Weapon.hpp"
+#include "HumanA.h"
+#include "Weapon.h"
+#include <string>
+#include <iostream>
 
-HumanA::HumanA( std::string name, Weapon &weapon ): name(name), club(weapon)
+HumanA::HumanA(std::string const t_name, Weapon &w) : name(t_name), weapon(w)
 {
 }
 
-HumanA::~HumanA( void )
+HumanA::~HumanA()
 {
+	
 }
 
-void	HumanA::attack( void ) const
+HumanA &HumanA::operator=(const HumanA &h)
 {
-	std::cout << this->name << " attacks with their " << this->club.getType()
-		<< std::endl;
+	name = h.name;
+	weapon = h.weapon;
+	return *this;
 }
 
-Weapon&	HumanA::getWeapon( void ) const
+void HumanA::attack( void )
 {
-	return (this->club);
+	std::cout << name << ": attacks with their " << weapon.getType() << std::endl;
 }

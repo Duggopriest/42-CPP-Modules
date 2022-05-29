@@ -1,39 +1,49 @@
-#include "Weapon.hpp"
+#include "HumanB.h"
+#include "Weapon.h"
+#include <string>
+#include <iostream>
 
-HumanB::HumanB( std::string name ): name(name), club(nullptr)
+HumanB::HumanB(std::string const t_name)
 {
+	name = t_name;
+	weapon = NULL;
+	hasWeapon = 0;
 }
 
-HumanB::~HumanB( void )
+HumanB::HumanB(std::string const t_name, Weapon w)
 {
+	name = t_name;
+	weapon = &w;
+	hasWeapon = 1;
 }
 
-void	HumanB::attack( void ) const
+HumanB::~HumanB()
 {
-	if (this->club)
+	
+}
+
+void HumanB::setWeapon(Weapon &w)
+{
+	if (w.getType() == "")
 	{
-		std::cout << this->name << " attacks with their " << this->weapon->getType()
-			<< std::endl;
+		std::cout << "New weapon must exist!" << std::endl;
+		return;
 	}
-	else
-	{
-		std::cout << this->name
-			<< " can't attack because they don't have a weapon" << std::endl;
-	}
+	weapon = &w;
+	hasWeapon = 1;
 }
 
-Weapon&	HumanB::getWeapon( void ) const
+void HumanB::attack( void )
 {
-	return (*(this->club));
+	if (hasWeapon && weapon)
+		std::cout << name << ": attacks with their " << weapon->getType() << std::endl;
 }
 
-bool	HumanB::setWeapon( Weapon& newWeapon )
+HumanB &HumanB::operator=(const HumanB &h)
 {
-	if (newWeapon.getType() == "")
-	{
-		std::cerr << "New weapon can't be nothing" << std::endl;
-		return (false);
-	}
-	this->club = &newWeapon;
-	return (true);
+	name = h.name;
+	weapon = h.weapon;
+	hasWeapon = h.hasWeapon;
+
+	return *this;
 }

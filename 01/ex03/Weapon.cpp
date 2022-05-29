@@ -1,19 +1,33 @@
-#include "Weapon.hpp"
+#include "Weapon.h"
+#include <string>
 
-Weapon::Weapon( std::string type ): type(type)
+Weapon::Weapon(std::string t_name)
 {
+	name = t_name;
 }
 
-Weapon::~Weapon( void )
+Weapon::Weapon(const Weapon &w)
 {
+	name = w.name;
 }
 
-const std::string&	Weapon::getType( void ) const
+Weapon::~Weapon()
 {
-	return (this->type);
+
 }
 
-void		Weapon::setType( const std::string& newType )
+Weapon &Weapon::operator=(const Weapon &w)
 {
-	this->type = newType;
+	name = w.name;
+	return *this;
+}
+
+void Weapon::setType(std::string t_name)
+{
+	name = t_name;
+}
+
+std::string Weapon::getType( void )
+{
+	return (name);
 }
