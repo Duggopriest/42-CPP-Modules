@@ -6,7 +6,7 @@
 /*   By: jgobbett <jgobbett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:02:40 by jgobbett          #+#    #+#             */
-/*   Updated: 2022/05/26 19:36:03 by jgobbett         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:14:39 by jgobbett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,27 +68,27 @@ int	main(void)
 			std::cout << "ADD New Contact"<< std::endl;
 			for (int i = 1; i >= 0; i--)
 				PB.Cons[i] = PB.Cons[i - 1];
-			std::cout << "first name of contact"<< std::endl;
+			std::cout << "first name of contact  -> last name -> nick name -> number -> darkest secret" << std::endl;
 			std::cin >> PB.Cons[0].name;
 			while (PB.Cons[0].name.size() < 10)
 				PB.Cons[0].name.append(" ");
 			system("clear");
 
-			std::cout << "last name number of ";
+			std::cout << "last name number of -> nick name -> number -> darkest secret";
 			std::cout << PB.Cons[0].name << std::endl;
 			std::cin >> PB.Cons[0].Last_name;
 			while (PB.Cons[0].Last_name.size() < 10)
 				PB.Cons[0].Last_name.append(" ");
 			system("clear");
 
-			std::cout << "nick name number of ";
+			std::cout << "nick name number of -> number -> darkest secret";
 			std::cout << PB.Cons[0].name << std::endl;
 			std::cin >> PB.Cons[0].Nick_name;
 			while (PB.Cons[0].Nick_name.size() < 10)
 				PB.Cons[0].Nick_name.append(" ");
 			system("clear");
 
-			std::cout << "phone number of ";
+			std::cout << "phone number of -> darkest secret";
 			std::cout << PB.Cons[0].name << std::endl;
 			std::cin >> PB.Cons[0].phone;
 			while (PB.Cons[0].phone.size() < 10)
@@ -109,15 +109,10 @@ int	main(void)
 			{
 				std::string temp;
 				std::cout << i + 1;
-				std::cout << " | ";
 				putst(PB.Cons[i].name);
-				std::cout << " | ";
 				putst(PB.Cons[i].Last_name);
-				std::cout << " | ";
 				putst(PB.Cons[i].Nick_name);
-				std::cout << " | ";
 				putst(PB.Cons[i].phone);
-				std::cout << " | ";
 				putst(PB.Cons[i].secret);
 				std::cout << " | " << std::endl;
 			}
@@ -135,12 +130,12 @@ int	main(void)
 			else
 			{
 				std::cout << "invalid" << std::endl;
-				command = "B";
+				command = "1";
 			}
 			while (1)
 			{
-				std::cout << "Type B to go back" << std::endl;
-				if (command == "B")
+				std::cout << "Type BACK - 1 to go back" << std::endl;
+				if (command == "BACK" || command == "1")
 					break ;
 				std::cin >> command;
 			}

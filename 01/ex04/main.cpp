@@ -23,7 +23,7 @@ int main (int argc, char **argv)
 	string			outname = argv[1];
 	outname.append(".replace");
 	cout << "creating " << outname << endl;
-	std::ofstream	out{ outname };
+	std::ofstream	fileout;// { outname };
 
 	cout << "writing to " << outname << endl;
 	while ( getline (file,lineRead))
