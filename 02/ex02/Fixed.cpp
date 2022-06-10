@@ -40,7 +40,6 @@ float	Fixed::toFloat (void) const
 	return ((float)value / (float)(1 << Fixed::bits));
 }
 
-
 int Fixed::getRawBits ( void ) const
 {
 	return (value);
@@ -60,7 +59,9 @@ std::ostream &operator<<(std::ostream &out, Fixed const &value)
 // operators -------------------------------------------------
 
 static bool isEqual(Fixed const & op1, Fixed const & op2)
-{ return (op1.getRawBits() == op2.getRawBits()); }
+{
+	return (op1.getRawBits() == op2.getRawBits()); 
+}
 
 bool Fixed::operator> (Fixed const & op) const
 {

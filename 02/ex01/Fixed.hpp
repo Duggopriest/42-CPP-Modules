@@ -10,9 +10,9 @@ class Fixed
 	static const int bits = 8; // store the number of fractional bits. Its value will always be the integer literal 8.
 
 	public:
-	Fixed	();
-	Fixed	(const int i);
-	Fixed	(const float i);
+	Fixed();
+	Fixed(const int i);
+	Fixed(const float f);
 	virtual ~Fixed();
 
 	Fixed				(Fixed const &copy);
