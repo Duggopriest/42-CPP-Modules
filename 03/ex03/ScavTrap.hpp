@@ -1,25 +1,20 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
-#include <iostream>
-# include <cmath>
 
-class ScavTrap
+# include "ClapTrap.hpp"
+
+class ScavTrap : virtual public ClapTrap
 {
-	private:
-	std::string Name;
-	int 		HitPoints;
-	int			EnergyPoints;
-	int			AttackDamage;
-
 	public:
-	ScavTrap(const std::string Name);
-	~ScavTrap();
+	ScavTrap( const std::string name );
+	ScavTrap(const ScavTrap &src);
+	~ScavTrap(void);
 
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	void	attack(const std::string &target) const;
+	void	guardGate(void);
 
-	void	guardGate();
+	protected:
+	ScavTrap(void);
 };
 
 #endif

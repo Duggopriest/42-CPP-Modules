@@ -1,53 +1,29 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string call)
+FragTrap::FragTrap(const std::string &name)
 {
-	Name = call;
-	std::cout << Name << " is constructing" << std::endl;
-	HitPoints = 100;
-	EnergyPoints = 100;
-	AttackDamage = 30;
+	this->Name = name;
+	this->HitPoints = 100;
+	this->EnergyPoints = 100;
+	this->AttackDamage = 30;
+	this->InitalEnergyPoints = this->HitPoints;
+	std::cout << "Name constructor for FragTrap called" << std::endl;
+	return;
 }
 
-FragTrap::~FragTrap()
+FragTrap::FragTrap( void )
 {
-	std::cout << Name << " has been distroyed" << std::endl;
+	std::cout << "Default constructor for FragTrap called" << std::endl;
+	return;
 }
 
-void	FragTrap::attack(const std::string& target)
+FragTrap::~FragTrap( void )
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " attacks " << target << ", causing 0 points of damage!" << std::endl;
-	EnergyPoints--;
+	std::cout << "Destructor called for FragTrap called" << std::endl;
+	return;
 }
 
-void	FragTrap::takeDamage(unsigned int amount)
+void	FragTrap::highFivesGuys(void)
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " took " << amount << " damage" << std::endl;
-}
-
-void	FragTrap::beRepaired(unsigned int amount)
-{
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " is repairing them self for " << amount << std::endl;
-	HitPoints += amount;
-	EnergyPoints--;
-}
-
-void FragTrap::highFivesGuys(void)
-{
-	std::cout << Name << " says High Five!" << std::endl;
+	std::cout << "Hey guys! Give me a high five!" << std::endl;
 }

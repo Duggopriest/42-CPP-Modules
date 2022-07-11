@@ -1,53 +1,34 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(const std::string call)
+DiamondTrap::DiamondTrap(const std::string &name)
 {
-	Name = call;
-	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
-	std::cout << Name << " has been constructed" << std::endl;
+	ClapTrap::Name = name + "_clap_name";
+	this->Name = name;
+	this->HitPoints = FragTrap::HitPoints;
+	this->EnergyPoints = ScavTrap::EnergyPoints;
+	this->AttackDamage = FragTrap::AttackDamage;
+	std::cout << "Name constructor for DiamondTrap called" << std::endl;
+	return;
 }
 
-DiamondTrap::~DiamondTrap()
+DiamondTrap::DiamondTrap( void )
 {
-	std::cout << Name << " is deconstructing" << std::endl;
+	std::cout << "Default constructor for DiamondTrap called" << std::endl;
+	return;
 }
 
-void	DiamondTrap::attack(const std::string& target)
+DiamondTrap::~DiamondTrap( void )
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " attacks " << target << ", causing 0 points of damage!" << std::endl;
-	EnergyPoints--;
+	std::cout << "Destructor for DiamondTrap called" << std::endl;
+	return;
 }
 
-void	DiamondTrap::takeDamage(unsigned int amount)
+void		DiamondTrap::attack( const std::string &target ) const
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " took " << amount << " damage" << std::endl;
+	ScavTrap::attack(target);
 }
 
-void	DiamondTrap::beRepaired(unsigned int amount)
+void		DiamondTrap::whoAmI(void) const
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " is repairing them self for " << amount << std::endl;
-	HitPoints += amount;
-	EnergyPoints--;
-}
-
-void	DiamondTrap::whoAmI()
-{
-	std::cout << "who am I? " << " I am " << Name << " and " << "ClapTrap" << std::endl;
+	std::cout << "I am " << this->Name << " and my ClapTrap name is " << ClapTrap::Name << std::endl;
 }

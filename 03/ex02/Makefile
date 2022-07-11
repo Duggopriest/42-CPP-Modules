@@ -1,4 +1,4 @@
 all:
 	@clear
-	c++ *.cpp -Wall -Wextra -Werror -o Repetitive
-	./Repetitive
+	c++ *.cpp -Wall -Wextra -Werror -o Aaaaand_OPEN
+	./Aaaaand_OPEN

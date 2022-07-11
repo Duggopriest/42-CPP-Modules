@@ -1,53 +1,29 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(const std::string call)
+ScavTrap::ScavTrap(const std::string name)
 {
-	Name = call;
-	std::cout << Name << " is now constructing" << std::endl;
-	HitPoints = 100;
-	EnergyPoints = 50;
-	AttackDamage = 20;
+	this->Name = name;
+	this->HitPoints = 100;
+	this->EnergyPoints = 50;
+	this->AttackDamage = 20;
+	this->InitalEnergyPoints = this->HitPoints;
+	std::cout << "Name constructor for ScavTrap called" << std::endl;
+	return;
 }
 
-ScavTrap::~ScavTrap()
+ScavTrap::~ScavTrap( void )
 {
-	std::cout << Name << " has now been distroyed" << std::endl;
+	std::cout << "Destructor called" << std::endl;
+	return;
 }
 
-void	ScavTrap::attack(const std::string& target)
+void	ScavTrap::guardGate(void)
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " attacks " << target << ", causing 0 points of damage!" << std::endl;
-	EnergyPoints--;
+	std::cout << "ScavTrap " << this->Name << " entered Gate Keeper mode!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount)
+void		ScavTrap::attack( std::string const & target )
 {
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " took " << amount << " damage" << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	if (EnergyPoints <= 0)
-	{
-		std::cout << Name << " is out of Energy" << std::endl;
-		return ;
-	}
-	std::cout << Name << " is repairing them self for " << amount << std::endl;
-	HitPoints += amount;
-	EnergyPoints--;
-}
-
-void	ScavTrap::guardGate()
-{
-	std::cout << Name << " is now in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->Name << " attack " << target
+		<< " causing " << this->AttackDamage << " points of damage!" << std::endl;
 }

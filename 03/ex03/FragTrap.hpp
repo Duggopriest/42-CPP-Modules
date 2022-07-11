@@ -1,25 +1,19 @@
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
-#include <iostream>
-# include <cmath>
 
-class FragTrap
+#include "ClapTrap.hpp"
+
+class FragTrap : virtual public ClapTrap
 {
-	private:
-	std::string Name;
-	int 		HitPoints;
-	int			EnergyPoints;
-	int			AttackDamage;
-
 	public:
-	FragTrap(const std::string Name);
-	~FragTrap();
 
-	void	attack(const std::string& target);
-	void	takeDamage(unsigned int amount);
-	void	beRepaired(unsigned int amount);
+	FragTrap(const std::string &name);
+	~FragTrap(void);
 
 	void	highFivesGuys(void);
+
+	protected:
+	FragTrap(void);
 };
 
 #endif

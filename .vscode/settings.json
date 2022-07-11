@@ -65,6 +65,10 @@
 		"xstddef": "cpp",
 		"xtr1common": "cpp",
 		"xutility": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"xlocbuf": "cpp",
+		"xlocmes": "cpp",
+		"xlocmon": "cpp",
+		"xloctime": "cpp"
 	}
 }
