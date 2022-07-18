@@ -16,6 +16,9 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	delete j;
+	delete i;
+
 	cout << "----------------------------------\n";
 
 	const WrongAnimal* w = new WrongCat();

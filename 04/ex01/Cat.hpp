@@ -1,25 +1,26 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include <string.h>
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 using std::string;
 using std::cout;
 using std::endl;
 
-class Dog : public Animal
+class Cat : public Animal
 {
 	public:
-	Dog(void);
-	Dog( const Dog &src );
-	~Dog( void );
+	Cat(void);
+	~Cat(void);
 
-	//Dog &operator=(Dog const &value);
 	virtual void makeSound(void) const;
 
 	protected:
 	string type;
+	private:
+	Brain brain;
 };
 
 

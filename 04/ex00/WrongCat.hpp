@@ -1,26 +1,27 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
+
+#include "WrongAnimal.hpp"
 
 #include <string.h>
 #include <iostream>
-#include "Animal.hpp"
 using std::string;
 using std::cout;
 using std::endl;
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 	public:
-	Dog(void);
-	Dog( const Dog &src );
-	~Dog( void );
+	WrongCat(void);
+	WrongCat( const WrongCat &src );
+	~WrongCat( void );
 
-	//Dog &operator=(Dog const &value);
 	virtual void makeSound(void) const;
 
 	protected:
 	string type;
 };
+
 
 
 #endif

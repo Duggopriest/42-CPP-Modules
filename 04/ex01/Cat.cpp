@@ -4,12 +4,14 @@ Cat::Cat(void)
 {
 	cout << "Default Constructor for Cat called" << endl;
 	Animal::type = "Cat";
+	Brain = new Brain();
 	return;
 }
 
 Cat::~Cat(void)
 {
 	cout << "Destructor for Cat called" << endl;
+	delete this->brain;
 	return;
 }
 
