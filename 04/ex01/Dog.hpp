@@ -13,16 +13,14 @@ class Dog : public Animal
 {
 	public:
 	Dog(void);
-	Dog( const Dog &src );
-	~Dog( void );
+	~Dog(void);
 
-	//Dog &operator=(Dog const &value);
 	virtual void makeSound(void) const;
 
 	protected:
 	string type;
 	private:
-	Brain *Brain;
+	Brain *Brains;
 };
 
 

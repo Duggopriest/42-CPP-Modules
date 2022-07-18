@@ -20,7 +20,7 @@ class Cat : public Animal
 	protected:
 	string type;
 	private:
-	Brain brain;
+	Brain *Brains;
 };
 
 
