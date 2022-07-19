@@ -1,5 +1,5 @@
-#ifndef TEMP_HPP
-# define TEMP_HPP
+#ifndef Data_HPP
+# define Data_HPP
 
 #include <string.h>
 #include <iostream>
@@ -7,11 +7,10 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class TEMP
+typedef struct  s_Data
 {
-	public:
-	    TEMP();
-        ~TEMP();
-};
+	string data;
+}	Data;
+
 
 #endif
