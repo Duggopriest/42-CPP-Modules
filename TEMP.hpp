@@ -1,5 +1,5 @@
-#ifndef TEMP_HPP
-# define TEMP_HPP
+#ifndef MutantStack_HPP
+# define MutantStack_HPP
 
 #include <string.h>
 #include <iostream>
@@ -7,11 +7,11 @@ using std::string;
 using std::cout;
 using std::endl;
 
-class TEMP
+class MutantStack
 {
 	public:
-	    TEMP();
-        ~TEMP();
+	    MutantStack();
+        ~MutantStack();
 };
 
 #endif
